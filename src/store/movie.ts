@@ -1,3 +1,4 @@
+//movie.ts 
 import { Store } from "../core/jsu";
 
 export interface SimpleMovie {
