@@ -1,4 +1,4 @@
-//movie.ts 
+//movie.ts 캐시삭제
 import { Store } from "../core/jsu";
 
 export interface SimpleMovie {
