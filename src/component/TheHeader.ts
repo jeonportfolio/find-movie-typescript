@@ -1,6 +1,15 @@
 import { Component } from "../core/jsu";
 
+interface State {
+    [key: string]: unknown
+    menus: {
+        name:string
+        href:string 
+    }[]
+}
+
 export default class TheHeader extends Component {
+    public state!: State 
     constructor(){
         super({
             tagName: 'header',
@@ -51,7 +60,7 @@ export default class TheHeader extends Component {
                 </ul>
             </nav>
             <a href="#/about" class="user">
-                <img src="./logo.png" alt="User">
+                <img src="https://images.unsplash.com/photo-1731973453382-647c28c8ba1b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDl8Ym84alFLVGFFMFl8fGVufDB8fHx8fA%3D%3D" alt="User">
             </a>
         `
     }

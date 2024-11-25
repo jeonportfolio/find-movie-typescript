@@ -2,6 +2,7 @@
   "name": "find-movie",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "dev": "parcel ./index.html",
     "build": "parcel build ./index.html",
@@ -11,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node-fetch": "^2.6.12",
     "dotenv": "^16.4.5",
     "parcel": "^2.12.0",
     "typescript": "^5.7.2",

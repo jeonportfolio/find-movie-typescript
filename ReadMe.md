@@ -2,8 +2,8 @@
 ---
 - 자바스크립트 or 타입스크립트 버젼으로 <br/>
 - store & router 개념을 활용 <br/>
-- vercel 배포 
-- vercel 배포 
+- vercel 배포 <br/>
+- vercel 서버리스 함수 사용 `npm run vercel`<br/>
 
 ## 프로젝트 설정 <br/>
 ---
@@ -30,5 +30,9 @@
 ## 기존의 데이터를 기본으로 interface 자동화 사이트<br/>
 - `https://transform.tools/` -> json -> to Typescript선택<br/>
 - console창에서 JSON.stringfy()를 사용해서 데이터 추출<br/>
+
+## api node fetch 타입스크립트 호환<br/>
+- `npm i -D @types/node-fetch`<br/>
+- `import { VercelRequest, VercelResponse } from '@vercel/node'` -> request, response 타입을 맞춘다 <br/>
 
 
