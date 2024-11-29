@@ -40,5 +40,8 @@
 
 - `npm i openai` 설치<br/>
 - vercel 서버리스 활용<br/>
+- store 생성 -> 메세지 상태관리 <br/>
+- 메세지 보내기(서버전송 fetch함수) & 리셋함수 <br/>
+- try catch문을 써서 오류 발생제어<br/>
 
 
