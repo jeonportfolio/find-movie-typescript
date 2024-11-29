@@ -36,3 +36,9 @@
 - `import { VercelRequest, VercelResponse } from '@vercel/node'` -> request, response 타입을 맞춘다 <br/>
 
 
+## open API 활용 -> 챗봇 만들기 <br/>
+
+- `npm i openai` 설치<br/>
+- vercel 서버리스 활용<br/>
+
+
