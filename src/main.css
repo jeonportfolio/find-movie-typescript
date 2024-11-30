@@ -458,9 +458,22 @@ footer a:hover {
     text-align: center;
 }
 
+/* 챗봇 */
 
+.chatbot {
+    --position-bottom: 20px;
+    --position-right: 40px;
+}
 
-
+@media (max-width: 600px) {
+    .chatbot {
+        --position-right: 20px;
+    }
+}
+.chatbot .chats{
+    width: calc(100% - var(--position-right) * 2);
+    max-width: 450px;
+}
 
 
 
