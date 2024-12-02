@@ -66,11 +66,32 @@ body {
     color: var(--color-white);
 }
 
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-starter {
+    width: 100px;
+    height: 54px;
+    padding: 0;
+    border-radius: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #000;
+}
+
 /* 로딩 */
 .the-loader {
     width: 30px;
     height: 30px;
-    margin :30px auto;
     border: 4px solid var(--color-primary);
     border-top-color: transparent;
     border-radius: 50%;
@@ -282,6 +303,9 @@ footer a:hover {
     justify-content: center;
     gap: 20px;
 }
+.movie-list .the-loader {
+    margin :30px auto;
+}
 
 /*  영화 목록 내 영화 */
 
@@ -465,15 +489,116 @@ footer a:hover {
     --position-right: 40px;
 }
 
+
 @media (max-width: 600px) {
     .chatbot {
         --position-right: 20px;
     }
 }
+
 .chatbot .chats{
     width: calc(100% - var(--position-right) * 2);
     max-width: 450px;
+    border: 1px solid var(--color--black);
+    border-radius: 20px 20px 4px 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+    background-color: var(--color-area);
+    position: fixed;
+    bottom:calc(var(--position-bottom) + 50px + 14px);
+    right: var(--position-right);
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, visibility;
+    transition-duration: .3s;
 }
+
+.chatbot.chatbot__on .chats {
+    opacity: 1;
+    visibility: visible;
+}
+
+.chatbot .chats ul {
+    max-height: calc(100vh - 340px);
+    padding: 60px 20px 20px;
+    overflow: auto; /* 스크롤 */
+    flex-direction: column;
+    gap: 14px;
+    display: flex;
+}
+
+.chatbot .chats li {
+    max-width: 70%;
+    padding: 12px 18px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+}
+
+.chatbot .chats li.assistant {
+    align-self: flex-start;
+    border-top-left-radius: 4px;
+    background-color: var(--color-white-5);
+}
+
+.chatbot .chats li.assistant .photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-white-5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: -10px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.chatbot .chats li.assistant .the-loader {
+    width: 16px;
+    height: 16px;
+    border-width: 3px;
+}
+
+
+.chatbot .chats li.user {
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+    background-color: var(--color-primary);
+    color: var(--color-black);
+}
+
+.chatbot .input {
+    padding: 14px 20px 20px;
+    border-top: 1px solid var(--color-white-5);
+    display: flex;
+    gap: 10px;
+}
+
+.chatbot .input input {
+    flex-grow: 1;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px 4px 4px 10px;
+    font-size: 16px;
+    color: var(--color-white);
+    background-color: var(--color-white-5);
+}
+
+.chatbot .chat-starter {
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+    position: fixed;
+    bottom: var(--position-bottom);
+    right: var(--position-right);
+    z-index: 1;
+}
+
+.chatbot .chat-starter .icon--open { display: block; }
+.chatbot .chat-starter .icon--close { display: none; }
+
 
 
 

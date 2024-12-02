@@ -11,7 +11,9 @@ interface Message {
     content: string 
 }
 const defaultMessages: Message[] = [
-    { role: 'assistant', content: '좋아하는 장르나 제목을 알려주세요'}
+    { role: 'assistant', content: '영화에 대해 궁금한 점을 물어보세요'},
+    { role: 'user', content: '영화 추천'},
+    { role: 'assistant', content: '어벤져스 추천'}
 ]
 
 const store = new Store<State>({
