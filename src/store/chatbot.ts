@@ -1,19 +1,14 @@
 import { Store } from '../core/jsu'
+import OpenAI from 'openai'
 
 interface State {
     chatText: string
-    messages: Message[]
+    messages: OpenAI.ChatCompletionMessageParam[]
     loading: boolean
 }
 
-interface Message {
-    role: 'assistant' | 'user'
-    content: string 
-}
-const defaultMessages: Message[] = [
+const defaultMessages: OpenAI.ChatCompletionMessageParam[] = [
     { role: 'assistant', content: '영화에 대해 궁금한 점을 물어보세요'},
-    { role: 'user', content: '영화 추천'},
-    { role: 'assistant', content: '어벤져스 추천'}
 ]
 
 const store = new Store<State>({
@@ -35,7 +30,7 @@ export const sendMessages = async() => {
         const res = await fetch('/api/chatbot', {
             method: 'POST',
             body: JSON.stringify({
-                message: store.state.messages
+                messages: store.state.messages
             })
         })
         const message = await res.json()
