@@ -2,7 +2,7 @@ import { VercelRequest, VercelResponse} from '@vercel/node'
 import OpenAI from 'openai'
 
 const openai = new OpenAI({
-    apiKey: process.env.CHATAPI
+    apiKey: process.env.NEXT_PUBLIC_CHATAPI
 })
 
 async function sendMessages(messages: OpenAI.ChatCompletionMessageParam[]) {
