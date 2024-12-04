@@ -43,7 +43,8 @@
 - store 생성 -> 메세지 상태관리 <br/>
 - 메세지 보내기(서버전송 fetch함수) & 리셋함수 <br/>
 - try catch문을 써서 오류 발생제어<br/>
-- vercel serverless 사용 dd
+- vercel serverless 사용 <br/>
+- chat bot의 답변 수정 (파인튜닝 설정) <br/>
 
 
 

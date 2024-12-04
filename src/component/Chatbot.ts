@@ -48,13 +48,18 @@ export default class Chatbot extends Component {
             chatStore.state.chatText = inputEl.value
         })
 
+        //엔터키 입력 한국어는 이벤트가 두번 발생 가능하기에 isComposing을 사용한다
         inputEl?.addEventListener('keydown', (event:Event) => {
-            if(event instanceof KeyboardEvent && event.key === 'Enter') {
+            if(
+                event instanceof KeyboardEvent && 
+                event.key === 'Enter' && 
+                !event.isComposing
+            ) {
                     sendMessages()
             }
         })
 
-        const btnEl = this.el.querySelector('input .btn')
+        const btnEl = this.el.querySelector('.input .btn')
         btnEl?.addEventListener('click', () => {
             sendMessages()
         })
@@ -78,5 +83,11 @@ export default class Chatbot extends Component {
         chatsEl?.addEventListener('click', (event: Event) => {
             event.stopPropagation()
         })
+
+        const messageListEl = this.el.querySelector('.chats ul')
+        messageListEl?.scrollTo(0, messageListEl.scrollHeight || 0) 
+
+        inputEl?.focus()
+
     } 
 }
