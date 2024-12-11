@@ -1,5 +1,6 @@
 import { Component } from "../core/jsu";
 import chatStore, { sendMessages } from "../store/chatbot"
+import movieStore, { searchMovies } from '../store/movie'
 
 export default class Chatbot extends Component {
     constructor() {
@@ -19,7 +20,11 @@ export default class Chatbot extends Component {
                                        <span class="material-symbols-outlined">😸</span>
                                     </div>
                                 `) : ''}
-                                ${msg.content}
+                                ${typeof msg.content === 'string' 
+                                    ? (msg.content.replace(/{{(.*?)\/\/(.*?)}}/g, (match, ko, en) => /* html */`
+                                        <span class= "movie-title" data-movie-title="${en}">${ko}</span>
+                                    `)) 
+                                    : ''}
                             </li>       
                     `).join('')}
                     ${chatStore.state.loading ? (/* html */`
@@ -88,6 +93,16 @@ export default class Chatbot extends Component {
         messageListEl?.scrollTo(0, messageListEl.scrollHeight || 0) 
 
         inputEl?.focus()
+
+        const movieTitleEls = this.el.querySelectorAll<HTMLElement>('.movie-title')
+        movieTitleEls.forEach(movieTitleEl => {
+            movieTitleEl.addEventListener('click', () => {
+                const searchInputEl = document.querySelector<HTMLInputElement>('.search input')
+                if (!searchInputEl) return 
+                const title = movieTitleEl.dataset.movieTitle || ''
+                searchInputEl.value = title
+            })
+        })
 
     } 
 }

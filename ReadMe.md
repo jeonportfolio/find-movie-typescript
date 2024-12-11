@@ -45,6 +45,8 @@
 - try catch문을 써서 오류 발생제어<br/>
 - vercel serverless 사용 <br/>
 - chat bot의 답변 수정 (파인튜닝 설정) <br/>
+- chat bot 답변 -> 제목클릭 -> 바로검색 가능  <br/>
+
 
 
 
